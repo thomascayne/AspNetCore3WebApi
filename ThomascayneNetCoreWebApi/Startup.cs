@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -30,8 +31,8 @@ namespace AspNetCoreWebApi
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddControllers();
-
-      services.AddSwaggerGen(config => config.SwaggerDoc("v1", new OpenApiInfo { Title = "Thomas Cayne Web Api v1.0.0", Version = "v1" }));
+      services.AddApiVersioning(approach => approach.AssumeDefaultVersionWhenUnspecified = true);
+      services.AddSwaggerGen(config => config.SwaggerDoc("v1", new OpenApiInfo { Title = "Asp.Net Core Web Api v1.0.0", Version = "v1" }));
 
     }
 
@@ -57,7 +58,7 @@ namespace AspNetCoreWebApi
 
       app.UseSwaggerUI(config =>
       {
-        config.SwaggerEndpoint("/swagger/v1/swagger.json", "Thomas Cayne Web Api v1.0.0");
+        config.SwaggerEndpoint("/swagger/v1/swagger.json", "Asp.Net Core Web Api v1.0.0");
       });
 
       app.UseHttpsRedirection();
