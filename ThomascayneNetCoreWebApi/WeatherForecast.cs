@@ -1,6 +1,6 @@
 using System;
 
-namespace ThomascayneNetCoreWebApi
+namespace AspNetCoreWebApi
 {
   public class WeatherForecast
   {

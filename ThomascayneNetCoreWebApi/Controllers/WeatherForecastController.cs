@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace ThomascayneNetCoreWebApi.Controllers
+namespace AspNetCoreWebApi.Controllers
 {
   [ApiController]
   [Route("api")]
@@ -24,7 +24,7 @@ namespace ThomascayneNetCoreWebApi.Controllers
     }
 
     [HttpGet()]
-    [Route("weather")]
+    [Route("all-weather")]
     public IEnumerable<WeatherForecast> Get()
     {
       var rng = new Random();

@@ -12,7 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
-namespace ThomascayneNetCoreWebApi
+namespace AspNetCoreWebApi
 {
   public class Startup
   {
