@@ -8,6 +8,9 @@ namespace AspNetCoreWebApi.Data
 {
   public class ApplicationUser : IdentityUser
   {
-    public string Id { get; set; }
+    public string FirstName { get; set; }
+    public bool IsAdmin { get; set; }
+    public bool IsConfirmed { get; set; }
+    public string LastName { get; set; }
   }
 }
