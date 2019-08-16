@@ -1,11 +1,11 @@
-﻿using AspNetCoreWebApi.Data;
+﻿using AspNetCore3WebApi.Data;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AspNetCoreWebApi.Controllers.Users
+namespace AspNetCore3WebApi.Controllers.Users
 {
   [ApiController]
   [ApiVersion("1.0")]

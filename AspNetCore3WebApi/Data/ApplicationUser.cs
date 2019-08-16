@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AspNetCoreWebApi.Data
+namespace AspNetCore3WebApi.Data
 {
   public class ApplicationUser : IdentityUser
   {

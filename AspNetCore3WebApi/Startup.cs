@@ -1,5 +1,5 @@
-using AspNetCoreWebApi.Data;
-using AspNetCoreWebApi.Data.Seed;
+using AspNetCore3WebApi.Data;
+using AspNetCore3WebApi.Data.Seed;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -19,7 +19,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
-namespace AspNetCoreWebApi
+namespace AspNetCore3WebApi
 {
   public class Startup
   {

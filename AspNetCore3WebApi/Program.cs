@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace AspNetCoreWebApi
+namespace AspNetCore3WebApi
 {
   public class Program
   {

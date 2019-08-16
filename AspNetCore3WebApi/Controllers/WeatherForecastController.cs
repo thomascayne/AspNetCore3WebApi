@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AspNetCoreWebApi.Controllers
+namespace AspNetCore3WebApi.Controllers
 {
   [ApiController]
   [ApiVersion("1.0")]
