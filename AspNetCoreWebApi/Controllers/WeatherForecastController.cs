@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace AspNetCoreWebApi.Controllers
 {
-  [ApiVersion("1.0")]
   [ApiController]
-  [Route("api")]
+  [ApiVersion("1.0")]
+  [Route("api/v{version:apiVersion}/[controller]")]
   public class WeatherForecastController : ControllerBase
   {
     private static readonly string[] Summaries = new[]
