@@ -1,4 +1,5 @@
 ﻿using AspNetCore3WebApi.Data;
+using AspNetCore3WebApi.Service;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -19,6 +20,8 @@ namespace AspNetCore3WebApi.Data.Seed
 
       if (!context.Users.Any())
       {
+        Ulid ulid = Ulid.NewUlid();
+
         ApplicationUser user = new ApplicationUser()
         {
           Id = Guid.NewGuid().ToString(),
@@ -27,7 +30,7 @@ namespace AspNetCore3WebApi.Data.Seed
           FirstName = "Thomas",
           IsAdmin = true,
           LastName = "Cayne",
-          SecurityStamp = Guid.NewGuid().ToString(),
+          SecurityStamp = ulid.ToString(),
           UserName = "vanchisel"
         };
 
