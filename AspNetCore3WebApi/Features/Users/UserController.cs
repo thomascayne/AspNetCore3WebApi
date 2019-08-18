@@ -1,15 +1,12 @@
 ﻿using AspNetCore3WebApi.Data;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
-namespace AspNetCore3WebApi.Controllers.Users
+namespace AspNetCore3WebApi.Features.Users
 {
   [ApiController]
-  [ApiVersion("1.0")]
-  [Route("api/v{version:apiVersion}/[controller]")]
+  [Route("api")]
   public class UserController : ControllerBase
   {
     private ApplicationDbContext dbContext;

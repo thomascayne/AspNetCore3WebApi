@@ -1,15 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
-namespace AspNetCore3WebApi.Controllers
+namespace AspNetCore3WebApi.Features.Weather
 {
   [ApiController]
-  [ApiVersion("1.0")]
-  [Route("api/v{version:apiVersion}/[controller]")]
+  [Authorize]
+  [Route("api")]
   public class WeatherForecastController : ControllerBase
   {
     private static readonly string[] Summaries = new[]
@@ -25,7 +25,7 @@ namespace AspNetCore3WebApi.Controllers
     }
 
     [HttpGet()]
-    [Route("all-weather")]
+    [Route("list-weather")]
     public IEnumerable<WeatherForecast> Get()
     {
       var rng = new Random();

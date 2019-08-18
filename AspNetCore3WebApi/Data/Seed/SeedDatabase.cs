@@ -21,8 +21,12 @@ namespace AspNetCore3WebApi.Data.Seed
       {
         ApplicationUser user = new ApplicationUser()
         {
-          Email = "tcayne@hotmail.com",
           Id = Guid.NewGuid().ToString(),
+          Email = "tcayne@hotmail.com",
+          EmailConfirmed = true,
+          FirstName = "Thomas",
+          IsAdmin = true,
+          LastName = "Cayne",
           SecurityStamp = Guid.NewGuid().ToString(),
           UserName = "vanchisel"
         };
