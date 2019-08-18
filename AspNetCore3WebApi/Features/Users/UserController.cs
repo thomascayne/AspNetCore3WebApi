@@ -1,4 +1,5 @@
 ﻿using AspNetCore3WebApi.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Linq;
 namespace AspNetCore3WebApi.Features.Users
 {
   [ApiController]
+  [Authorize]
   [Route("api")]
   public class UserController : ControllerBase
   {
