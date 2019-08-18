@@ -17,7 +17,7 @@ Architecture:
 - [ ] Add Guard Clauses: [GuardClauses](https://github.com/ardalis/GuardClauses)
 - [ ] Automapper utilities: [Retrieving Property name from lambda expression](https://stackoverflow.com/a/52305334/939634)
 - [ ] Exception handler
-- [ ] Token authentication: [overview](https://medium.com/@samueleresca/developing-token-authentication-using-asp-net-core-c3fbd7bfd7cb)
+- [x] Token authentication: [overview](https://medium.com/@samueleresca/developing-token-authentication-using-asp-net-core-c3fbd7bfd7cb)
 - [ ] Implement [ULID](https://github.com/ulid/spec) instead of GUID/ULID for Ids. See this [note written by Steven van Deursen](https://blogs.cuttingedge.it/steven/posts/2012/returning-data-from-command-handlers/)
 - [ ] Authorize access
 - [ ] OData
