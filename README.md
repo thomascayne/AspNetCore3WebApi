@@ -19,7 +19,7 @@ Architecture:
 - [ ] Exception handler
 - [x] Token authentication: [overview](https://medium.com/@samueleresca/developing-token-authentication-using-asp-net-core-c3fbd7bfd7cb)
 - [x] Implement [ULID](https://github.com/ulid/spec) instead of GUID/ULID for Ids. See this [note written by Steven van Deursen](https://blogs.cuttingedge.it/steven/posts/2012/returning-data-from-command-handlers/)
-- [ ] Authorize access
+- [x] Authorize access
 - [ ] OData
 
 Funtionality:
