@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -45,6 +46,11 @@ namespace AspNetCore3WebApi
 
       services.AddControllers()
               .AddNewtonsoftJson();
+
+      services.AddHealthChecks()
+              .AddCheck("/api", () =>
+               HealthCheckResult.Healthy("Web api is running Ok!"), tags: new[] { "alive" });
+
 
       services.AddSwaggerGen(config => config.SwaggerDoc("v1", new OpenApiInfo { Title = "Asp.Net Core Web Api v1.0.0", Version = "v1" }));
 
