@@ -156,10 +156,8 @@ namespace AspNetCore3WebApi.Service
         else
         {
           //Use Crypto random
-          using (RNGCryptoServiceProvider RNG = new RNGCryptoServiceProvider())
-          {
-            RNG.GetBytes(randomness);
-          }
+          using RNGCryptoServiceProvider RNG = new RNGCryptoServiceProvider();
+          RNG.GetBytes(randomness);
         }
 
         LastUsedTimeStamp = timestamp;
@@ -425,13 +423,13 @@ namespace AspNetCore3WebApi.Service
     {
       if (input == null)
       {
-        ulid = default(Ulid);
+        ulid = default;
         return false;
       }
 
       if (input.Length != VALID_ULID_STRING_LENGTH)
       {
-        ulid = default(Ulid);
+        ulid = default;
         return false;
       }
 
@@ -456,7 +454,7 @@ namespace AspNetCore3WebApi.Service
 
         if (!found)
         {
-          ulid = default(Ulid);
+          ulid = default;
           return false;
         }
       }
