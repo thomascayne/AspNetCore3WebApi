@@ -11,7 +11,7 @@ namespace AspNetCore3WebApi.Features.Users
   [Route("api")]
   public class UserController : ControllerBase
   {
-    private ApplicationDbContext dbContext;
+    private readonly ApplicationDbContext dbContext;
 
     public UserController(ApplicationDbContext dbContext)
     {
