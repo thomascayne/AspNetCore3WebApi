@@ -1,3 +1,4 @@
+using AspNetCore3WebApi.Configuration.Pipeline;
 using AspNetCore3WebApi.Data;
 using AspNetCore3WebApi.Data.Seed;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -23,6 +24,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Text;
+using Microsoft.AspNetCore.Http;
 
 namespace AspNetCore3WebApi
 {
@@ -47,9 +49,7 @@ namespace AspNetCore3WebApi
       services.AddControllers()
               .AddNewtonsoftJson();
 
-      services.AddHealthChecks()
-              .AddCheck("/api", () =>
-               HealthCheckResult.Healthy("Web api is running Ok!"), tags: new[] { "alive" });
+      services.AddHealthChecks();
 
 
       services.AddSwaggerGen(config => config.SwaggerDoc("v1", new OpenApiInfo { Title = "Asp.Net Core Web Api v1.0.0", Version = "v1" }));
@@ -104,6 +104,8 @@ namespace AspNetCore3WebApi
       {
         config.SwaggerEndpoint("/swagger/v1/swagger.json", "Asp.Net Core Web Api v1.0.0");
       });
+
+      app.UseApiHealthCheck("/");
 
       app.UseHttpsRedirection();
 

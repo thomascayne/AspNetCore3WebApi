@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace AspNetCore3WebApi.Features.Weather
 {
+
   [ApiController]
   [Authorize]
   [Route("api")]
