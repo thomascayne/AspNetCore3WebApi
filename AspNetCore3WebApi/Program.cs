@@ -23,7 +23,6 @@ namespace AspNetCore3WebApi
             {
               webBuilder.UseStartup<Startup>();
             })
-      .UseServiceProviderFactory(new AutofacServiceProviderFactory())
-      ;
+      .UseServiceProviderFactory(new AutofacServiceProviderFactory());
   }
 }

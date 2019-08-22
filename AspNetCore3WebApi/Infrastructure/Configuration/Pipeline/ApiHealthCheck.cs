@@ -6,7 +6,7 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AspNetCore3WebApi.Configuration.Pipeline
+namespace AspNetCore3WebApi.Infrastructure.Configuration.Pipeline
 {
   public class ApiHealthCheckMiddleware
   {

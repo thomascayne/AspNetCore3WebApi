@@ -1,6 +1,7 @@
-using AspNetCore3WebApi.Configuration.Pipeline;
 using AspNetCore3WebApi.Data;
 using AspNetCore3WebApi.Data.Seed;
+using AspNetCore3WebApi.Infrastructure.Configuration.Pipeline;
+using AspNetCore3WebApi.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -55,6 +56,8 @@ namespace AspNetCore3WebApi
       services.AddSwaggerGen(config => config.SwaggerDoc("v1", new OpenApiInfo { Title = "Asp.Net Core Web Api v1.0.0", Version = "v1" }));
 
       services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+      services.AddDbContext<CampContext>(ServiceLifetime.Scoped)
+        .AddIdentity<CamperUser, IdentityRole>();
 
 
       services.AddIdentity<ApplicationUser, IdentityRole>()

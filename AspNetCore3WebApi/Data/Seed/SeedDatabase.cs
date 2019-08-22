@@ -1,11 +1,8 @@
-﻿using AspNetCore3WebApi.Data;
-using AspNetCore3WebApi.Service;
+﻿using AspNetCore3WebApi.Service;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace AspNetCore3WebApi.Data.Seed
 {

@@ -1,5 +1,5 @@
 ﻿using AspNetCore3WebApi.Data;
-using AspNetCore3WebApi.Data.Model;
+using AspNetCore3WebApi.Data.Entities;
 using AspNetCore3WebApi.Service;
 using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
 using Microsoft.AspNetCore.Identity;

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AspNetCore3WebApi.Data.Model
+namespace AspNetCore3WebApi.Data.Entities
 {
   public class LoginRequest
   {
