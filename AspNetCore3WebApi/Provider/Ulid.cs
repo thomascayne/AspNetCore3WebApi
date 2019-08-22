@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 
-namespace AspNetCore3WebApi.Service
+namespace AspNetCore3WebApi.Provider
 {
   public struct Ulid : IComparable, IComparable<Ulid>, IEquatable<Ulid>
   {
