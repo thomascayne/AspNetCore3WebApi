@@ -1,5 +1,4 @@
-﻿using AspNetCore3WebApi.Provider;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,7 +13,7 @@ namespace AspNetCore3WebApi.Data.Records
     public string FirstName { get; set; }
 
     [Key]
-    public Ulid Id { get; set; }
+    public string Id { get; set; }
     public bool IsAdmin { get; set; }
     public string LastName { get; set; }
     public string Phone { get; set; }

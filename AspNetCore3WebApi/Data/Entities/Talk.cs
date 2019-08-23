@@ -1,6 +1,4 @@
-﻿using AspNetCore3WebApi.Service;
-
-namespace AspNetCore3WebApi.Data.Entities
+﻿namespace AspNetCore3WebApi.Data.Entities
 {
   public class Talk
   {
