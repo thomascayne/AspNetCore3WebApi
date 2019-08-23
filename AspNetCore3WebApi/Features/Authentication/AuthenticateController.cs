@@ -1,6 +1,6 @@
 ﻿using AspNetCore3WebApi.Data;
 using AspNetCore3WebApi.Data.Model;
-using AspNetCore3WebApi.Provider;
+using AspNetCore3WebApi.Service;
 using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -28,7 +28,7 @@ namespace AspNetCore3WebApi.Features.Authentication
 
     [HttpPost]
     [Route("authenticate/login")]
-    public async Task<IActionResult> Login([FromBody] LoginRequest request, CancellationToken cancellationToken)
+    public async Task<IActionResult> Login([FromBody] LoginRequest request)
     {
       var user = await appUserManager.FindByNameAsync(request.Username);
       var pwd = await appUserManager.CheckPasswordAsync(user, request.Password);

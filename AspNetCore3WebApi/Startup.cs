@@ -1,5 +1,7 @@
 using AspNetCore3WebApi.Data;
 using AspNetCore3WebApi.Data.Seed;
+using AspNetCore3WebApi.Infrastructure.Configuration.Pipeline;
+using AspNetCore3WebApi.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -22,6 +25,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Text;
+using Microsoft.AspNetCore.Http;
 
 namespace AspNetCore3WebApi
 {
@@ -46,9 +50,14 @@ namespace AspNetCore3WebApi
       services.AddControllers()
               .AddNewtonsoftJson();
 
+      services.AddHealthChecks();
+
+
       services.AddSwaggerGen(config => config.SwaggerDoc("v1", new OpenApiInfo { Title = "Asp.Net Core Web Api v1.0.0", Version = "v1" }));
 
       services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+      services.AddDbContext<CampContext>(ServiceLifetime.Scoped)
+        .AddIdentity<CamperUser, IdentityRole>();
 
 
       services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -98,6 +107,8 @@ namespace AspNetCore3WebApi
       {
         config.SwaggerEndpoint("/swagger/v1/swagger.json", "Asp.Net Core Web Api v1.0.0");
       });
+
+      app.UseApiHealthCheck("/");
 
       app.UseHttpsRedirection();
 

@@ -1,4 +1,5 @@
-﻿using AspNetCore3WebApi.Provider;
+﻿using AspNetCore3WebApi.Data;
+using AspNetCore3WebApi.Service;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System;

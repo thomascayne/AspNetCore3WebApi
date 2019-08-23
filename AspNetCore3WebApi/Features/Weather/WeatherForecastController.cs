@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace AspNetCore3WebApi.Features.Weather
 {
+
   [ApiController]
   [Authorize]
   [Route("api")]
@@ -17,12 +18,12 @@ namespace AspNetCore3WebApi.Features.Weather
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-    private readonly ILogger<WeatherForecastController> _logger;
-
     public WeatherForecastController(ILogger<WeatherForecastController> logger)
     {
-      _logger = logger;
+      Logger = logger;
     }
+
+    public ILogger<WeatherForecastController> Logger { get; }
 
     [HttpGet()]
     [Route("list-weather")]
